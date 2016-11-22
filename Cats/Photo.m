@@ -9,13 +9,33 @@
 #import "Photo.h"
 
 @implementation Photo
-- (instancetype)initWithTitle:(NSString *)title andImageUrl:(NSURL *)imageUrl
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
     self = [super init];
     if (self) {
-        _title = title;
-        _imageUrl = imageUrl;
+        self.title = dictionary[@"title"];
+       NSString *string =
+        [NSString stringWithFormat:@"https://farm%@.staticflickr.com/%@/%@_%@.jpg",
+         dictionary[@"farm"],
+         dictionary[@"server"],
+         dictionary[@"id"],
+         dictionary[@"secret"]];
+         self.imageUrl = [NSURL URLWithString:string];
     }
     return self;
+}
+
++(instancetype)photoWithDictionary:(NSDictionary *)dictionary{
+    return [[self alloc] initWithDictionary:dictionary];
+}
+
++(NSArray *)picturesWithArray:(NSArray *)array{
+    NSMutableArray *result = [NSMutableArray array];
+    for (NSDictionary *photoInfo in array) {
+        Photo *photo = [[Photo alloc]initWithDictionary:photoInfo];
+        [result addObject:photo];
+    }
+    return result;
 }
 @end

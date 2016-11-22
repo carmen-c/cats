@@ -32,7 +32,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="VtM-a3-0fF" customClass="PictureCollectionViewCell">
-                                        <rect key="frame" x="88" y="0.0" width="200" height="200"/>
+                                        <rect key="frame" x="87.5" y="0.0" width="200" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -60,8 +60,8 @@
                                             <constraint firstItem="qVY-XR-eg2" firstAttribute="top" secondItem="otD-9O-6QN" secondAttribute="bottom" constant="20" id="qsl-es-ILK"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="pictureImageView" destination="otD-9O-6QN" id="GOd-ya-BIr"/>
-                                            <outlet property="pictureTitleLabel" destination="qVY-XR-eg2" id="u5u-zj-Lc6"/>
+                                            <outlet property="photoImageView" destination="otD-9O-6QN" id="421-Qc-gJp"/>
+                                            <outlet property="photoTitleLabel" destination="qVY-XR-eg2" id="KGX-hR-iyW"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

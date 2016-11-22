@@ -11,5 +11,8 @@
 @interface Photo : NSObject
 @property (nonatomic) NSString *title;
 @property (nonatomic) NSURL *imageUrl;
-- (instancetype)initWithTitle:(NSString *)title andImageUrl:(NSURL *)imageUrl;
+
++ (NSArray *)picturesWithArray:(NSArray *)array;
++ (instancetype)photoWithDictionary:(NSDictionary *)dictionary;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 @end

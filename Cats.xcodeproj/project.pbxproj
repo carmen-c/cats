@@ -15,6 +15,7 @@
 		1F7FB4131DE3B2A2000E6B7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7FB4111DE3B2A2000E6B7E /* LaunchScreen.storyboard */; };
 		1F7FB41C1DE3B542000E6B7E /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FB41B1DE3B542000E6B7E /* Photo.m */; };
 		1F7FB41F1DE3BBDB000E6B7E /* PictureCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FB41E1DE3BBDB000E6B7E /* PictureCollectionViewCell.m */; };
+		1F7FB4251DE3F14A000E6B7E /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FB4241DE3F14A000E6B7E /* DownloadManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		1F7FB41B1DE3B542000E6B7E /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		1F7FB41D1DE3BBDB000E6B7E /* PictureCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureCollectionViewCell.h; sourceTree = "<group>"; };
 		1F7FB41E1DE3BBDB000E6B7E /* PictureCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureCollectionViewCell.m; sourceTree = "<group>"; };
+		1F7FB4231DE3F14A000E6B7E /* DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadManager.h; sourceTree = "<group>"; };
+		1F7FB4241DE3F14A000E6B7E /* DownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,8 @@
 				1F7FB40A1DE3B2A2000E6B7E /* ViewController.m */,
 				1F7FB41D1DE3BBDB000E6B7E /* PictureCollectionViewCell.h */,
 				1F7FB41E1DE3BBDB000E6B7E /* PictureCollectionViewCell.m */,
+				1F7FB4231DE3F14A000E6B7E /* DownloadManager.h */,
+				1F7FB4241DE3F14A000E6B7E /* DownloadManager.m */,
 				1F7FB41A1DE3B542000E6B7E /* Photo.h */,
 				1F7FB41B1DE3B542000E6B7E /* Photo.m */,
 				1F7FB40C1DE3B2A2000E6B7E /* Main.storyboard */,
@@ -165,6 +170,7 @@
 				1F7FB40B1DE3B2A2000E6B7E /* ViewController.m in Sources */,
 				1F7FB4081DE3B2A2000E6B7E /* AppDelegate.m in Sources */,
 				1F7FB4051DE3B2A2000E6B7E /* main.m in Sources */,
+				1F7FB4251DE3F14A000E6B7E /* DownloadManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
