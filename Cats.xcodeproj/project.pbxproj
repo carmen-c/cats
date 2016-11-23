@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F08EC0B1DE4F3F60034FD46 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F08EC0A1DE4F3F60034FD46 /* DetailViewController.m */; };
 		1F08EC0E1DE5197B0034FD46 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F08EC0D1DE5197B0034FD46 /* MapKit.framework */; };
+		1F4B41B21DE524F10073D1BF /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B41B11DE524F10073D1BF /* SearchViewController.m */; };
 		1F7FB4051DE3B2A2000E6B7E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FB4041DE3B2A2000E6B7E /* main.m */; };
 		1F7FB4081DE3B2A2000E6B7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FB4071DE3B2A2000E6B7E /* AppDelegate.m */; };
 		1F7FB40B1DE3B2A2000E6B7E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FB40A1DE3B2A2000E6B7E /* ViewController.m */; };
@@ -24,6 +25,8 @@
 		1F08EC091DE4F3F60034FD46 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		1F08EC0A1DE4F3F60034FD46 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		1F08EC0D1DE5197B0034FD46 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1F4B41B01DE524F10073D1BF /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		1F4B41B11DE524F10073D1BF /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		1F7FB4001DE3B2A2000E6B7E /* Cats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7FB4041DE3B2A2000E6B7E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F7FB4061DE3B2A2000E6B7E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -59,6 +62,8 @@
 			children = (
 				1F7FB4091DE3B2A2000E6B7E /* ViewController.h */,
 				1F7FB40A1DE3B2A2000E6B7E /* ViewController.m */,
+				1F4B41B01DE524F10073D1BF /* SearchViewController.h */,
+				1F4B41B11DE524F10073D1BF /* SearchViewController.m */,
 				1F08EC091DE4F3F60034FD46 /* DetailViewController.h */,
 				1F08EC0A1DE4F3F60034FD46 /* DetailViewController.m */,
 			);
@@ -220,6 +225,7 @@
 				1F7FB4081DE3B2A2000E6B7E /* AppDelegate.m in Sources */,
 				1F7FB4051DE3B2A2000E6B7E /* main.m in Sources */,
 				1F7FB4251DE3F14A000E6B7E /* DownloadManager.m in Sources */,
+				1F4B41B21DE524F10073D1BF /* SearchViewController.m in Sources */,
 				1F08EC0B1DE4F3F60034FD46 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

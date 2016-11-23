@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 
 @interface Photo : NSObject <MKAnnotation>
-@property (nonatomic) NSString *title;
+@property (nonatomic, copy) NSString *title;
 @property (nonatomic) NSURL *imageUrl;
 @property (nonatomic) NSString *photoId;
 @property(nonatomic) CLLocationCoordinate2D coordinate;

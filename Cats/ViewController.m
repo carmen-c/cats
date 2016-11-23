@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import "PictureCollectionViewCell.h"
 #import "DownloadManager.h"
+#import "SearchViewController.h"
 
 @interface ViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -27,7 +28,14 @@ static NSString *const reuseIdentifier = @"Cell";
     
     self.downloadManager = [[DownloadManager alloc]init];
     [self getPhotos];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(aNewTag:) name:@"newTags" object:nil];
 
+}
+
+
+-(void)aNewTag:(NSNotification *)notify{
+    [self getPhotos];
 }
 
 #pragma mark - collection view

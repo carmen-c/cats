@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DownloadManager : NSObject
 
+@interface DownloadManager : NSObject 
+@property (nonatomic) NSString *tag;
 -(void)getCatPhotos:(void (^)(NSArray *photos))completion;
 -(void)getImage:(NSURL *)url completion:(void (^)(UIImage *image))completion;
 

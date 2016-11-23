@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 
 
+
 @interface DetailViewController ()
 @property (weak, nonatomic) IBOutlet MKMapView *catMapView;
 @end
@@ -37,7 +38,7 @@
 
 #pragma mark - Location
 
--(void)getGeoLocation{
+-(void)getGeoLocation {
     NSURL *url = [self getGeoLocationUrl:self.chosenPhoto];
     NSLog(@"%@", url);
     NSURLRequest *urlRequest = [[NSURLRequest alloc]initWithURL:url];

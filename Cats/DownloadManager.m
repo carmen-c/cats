@@ -9,6 +9,10 @@
 #import "DownloadManager.h"
 #import "Photo.h"
 
+
+@interface DownloadManager()
+@end
+
 @implementation DownloadManager
 
 //-(void)getCatPhotos:(void (^)(NSArray *))completion{
@@ -47,6 +51,27 @@
 //    
 //    [dataTask resume];
 //}
+-(instancetype)init{
+    self = [super init];
+    if (self){
+    self.tag = @"cat";
+        
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tagsInputted:) name:@"newTags" object:nil];
+        
+    }
+    return self;
+}
+
+#pragma mark - search delegate
+-(void)tagsInputted:(NSNotification *)notify{
+    NSDictionary *dict = [notify userInfo];
+    NSString *newTag = [NSString stringWithFormat:@"%@",[dict objectForKey:@"foo"]];
+    self.tag = newTag;
+}
+
+
+
+#pragma mark - download stuff
 
 -(void)getCatPhotos:(void (^)(NSArray *))completion{
     
@@ -109,7 +134,7 @@
 }
 
 -(NSURL *)createAUrl{
-    NSDictionary *queries = @{@"method": @"flickr.photos.search", @"api_key":@"9c767a008dc29a02317c67afc0206d96", @"has_geo":@"1", @"extras":@"url_m", @"format":@"json", @"nojsoncallback":@"1", @"tags":@"cat"};
+    NSDictionary *queries = @{@"method": @"flickr.photos.search", @"api_key":@"9c767a008dc29a02317c67afc0206d96", @"has_geo":@"1", @"extras":@"url_m", @"format":@"json", @"nojsoncallback":@"1", @"tags":self.tag};
     
     NSMutableArray *queryItems = [NSMutableArray array];
     for (NSString *key in queries.allKeys) {
@@ -124,5 +149,7 @@
     
     return components.URL;
 }
+
+
 
 @end

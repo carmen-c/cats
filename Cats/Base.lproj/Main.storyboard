@@ -6,10 +6,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Cats-->
+        <!--Pictures-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -32,7 +33,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="VtM-a3-0fF" customClass="PictureCollectionViewCell">
-                                        <rect key="frame" x="88" y="0.0" width="200" height="200"/>
+                                        <rect key="frame" x="87.5" y="0.0" width="200" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -79,7 +80,13 @@
                             <constraint firstAttribute="trailing" secondItem="qvr-kz-4Ja" secondAttribute="trailing" id="wbm-FC-bp0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Cats" id="mF5-hJ-4Wm"/>
+                    <navigationItem key="navigationItem" title="Pictures" id="mF5-hJ-4Wm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="mOZ-Zs-jEE">
+                            <connections>
+                                <segue destination="DTU-YB-CsC" kind="presentation" id="2JT-Pm-q6i"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="qvr-kz-4Ja" id="NMJ-jl-ehn"/>
                         <segue destination="3Cs-Vg-dLQ" kind="show" identifier="detailView" id="VCw-Oq-sBg"/>
@@ -88,6 +95,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="130.88455772113943"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="7zC-Dz-lPT">
+            <objects>
+                <viewController id="DTU-YB-CsC" customClass="SearchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jkx-sa-gAA"/>
+                        <viewControllerLayoutGuide type="bottom" id="VdA-xU-KOj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XeS-XI-ubw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="tags" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XYZ-sS-Xcj">
+                                <rect key="frame" x="36" y="319" width="303" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnd-up-oml">
+                                <rect key="frame" x="170" y="379" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="DTU-YB-CsC" eventType="touchUpInside" id="QDz-Pj-b5D"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dnd-up-oml" firstAttribute="top" secondItem="XYZ-sS-Xcj" secondAttribute="bottom" constant="30" id="9ec-yS-bi8"/>
+                            <constraint firstItem="XYZ-sS-Xcj" firstAttribute="leading" secondItem="XeS-XI-ubw" secondAttribute="leadingMargin" constant="20" id="G6s-8i-tRT"/>
+                            <constraint firstItem="Dnd-up-oml" firstAttribute="centerX" secondItem="XeS-XI-ubw" secondAttribute="centerX" id="Keh-WE-MMM"/>
+                            <constraint firstItem="XYZ-sS-Xcj" firstAttribute="centerY" secondItem="XeS-XI-ubw" secondAttribute="centerY" id="Q2j-ZE-1oQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XYZ-sS-Xcj" secondAttribute="trailing" constant="20" id="Wzo-pW-Ysr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tagTextField" destination="XYZ-sS-Xcj" id="hNb-8r-KZm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BlL-Tt-X8h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1861.5999999999999" y="-270.31484257871068"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="lyw-IG-9Q3">
@@ -122,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VIy-1n-4oJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1820" y="130.88455772113943"/>
+            <point key="canvasLocation" x="1858" y="392"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="h8k-Bm-Eky">
