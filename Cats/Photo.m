@@ -15,6 +15,7 @@
     self = [super init];
     if (self) {
         self.title = dictionary[@"title"];
+        self.photoId = dictionary[@"id"];
        NSString *string =
         [NSString stringWithFormat:@"https://farm%@.staticflickr.com/%@/%@_%@.jpg",
          dictionary[@"farm"],

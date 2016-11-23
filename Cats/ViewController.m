@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "DetailViewController.h"
 #import "PictureCollectionViewCell.h"
 #import "DownloadManager.h"
 
@@ -14,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic) NSArray *photos;
 @property (nonatomic) DownloadManager *downloadManager;
+@property (nonatomic) NSIndexPath *selectedCell;
 @end
 
 @implementation ViewController
@@ -25,7 +27,7 @@ static NSString *const reuseIdentifier = @"Cell";
     
     self.downloadManager = [[DownloadManager alloc]init];
     [self getPhotos];
-   
+
 }
 
 #pragma mark - collection view
@@ -39,6 +41,22 @@ static NSString *const reuseIdentifier = @"Cell";
     cell.photo = self.photos[indexPath.row];
     return cell;
 
+}
+
+#pragma mark - navigation
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    self.selectedCell = indexPath;
+    [self performSegueWithIdentifier:@"detailView" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"detailView"]) {
+        Photo *selectedPhoto = [self.photos objectAtIndex:self.selectedCell.row];
+        DetailViewController *detailVC = segue.destinationViewController;
+        detailVC.chosenPhoto = selectedPhoto;
+        
+    }
 }
 
 #pragma mark - general
