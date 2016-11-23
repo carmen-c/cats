@@ -1,5 +1,5 @@
 //
-//  SearchViewController.h
+//  ShowAllViewController.h
 //  Cats
 //
 //  Created by carmen cheng on 2016-11-22.
@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
 
-@interface SearchViewController : UIViewController
-
+@interface ShowAllViewController : UIViewController
+@property (nonatomic) NSMutableArray *allPhotos;
 @end

@@ -10,6 +10,8 @@
 		1F08EC0B1DE4F3F60034FD46 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F08EC0A1DE4F3F60034FD46 /* DetailViewController.m */; };
 		1F08EC0E1DE5197B0034FD46 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F08EC0D1DE5197B0034FD46 /* MapKit.framework */; };
 		1F4B41B21DE524F10073D1BF /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B41B11DE524F10073D1BF /* SearchViewController.m */; };
+		1F4B41B81DE53C5F0073D1BF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4B41B71DE53C5F0073D1BF /* CoreLocation.framework */; };
+		1F4B41BB1DE54A5C0073D1BF /* ShowAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B41BA1DE54A5C0073D1BF /* ShowAllViewController.m */; };
 		1F7FB4051DE3B2A2000E6B7E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FB4041DE3B2A2000E6B7E /* main.m */; };
 		1F7FB4081DE3B2A2000E6B7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FB4071DE3B2A2000E6B7E /* AppDelegate.m */; };
 		1F7FB40B1DE3B2A2000E6B7E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FB40A1DE3B2A2000E6B7E /* ViewController.m */; };
@@ -27,6 +29,10 @@
 		1F08EC0D1DE5197B0034FD46 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1F4B41B01DE524F10073D1BF /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		1F4B41B11DE524F10073D1BF /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		1F4B41B71DE53C5F0073D1BF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1F4B41B91DE54A5C0073D1BF /* ShowAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowAllViewController.h; sourceTree = "<group>"; };
+		1F4B41BA1DE54A5C0073D1BF /* ShowAllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowAllViewController.m; sourceTree = "<group>"; };
+		1F4B41BC1DE5557E0073D1BF /* API Key.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "API Key.h"; sourceTree = "<group>"; };
 		1F7FB4001DE3B2A2000E6B7E /* Cats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7FB4041DE3B2A2000E6B7E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F7FB4061DE3B2A2000E6B7E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -50,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F4B41B81DE53C5F0073D1BF /* CoreLocation.framework in Frameworks */,
 				1F08EC0E1DE5197B0034FD46 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,6 +73,8 @@
 				1F4B41B11DE524F10073D1BF /* SearchViewController.m */,
 				1F08EC091DE4F3F60034FD46 /* DetailViewController.h */,
 				1F08EC0A1DE4F3F60034FD46 /* DetailViewController.m */,
+				1F4B41B91DE54A5C0073D1BF /* ShowAllViewController.h */,
+				1F4B41BA1DE54A5C0073D1BF /* ShowAllViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -82,6 +91,7 @@
 		1F08EC0C1DE5197B0034FD46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1F4B41B71DE53C5F0073D1BF /* CoreLocation.framework */,
 				1F08EC0D1DE5197B0034FD46 /* MapKit.framework */,
 			);
 			name = Frameworks;
@@ -105,6 +115,7 @@
 				1F7FB41B1DE3B542000E6B7E /* Photo.m */,
 				1F7FB4231DE3F14A000E6B7E /* DownloadManager.h */,
 				1F7FB4241DE3F14A000E6B7E /* DownloadManager.m */,
+				1F4B41BC1DE5557E0073D1BF /* API Key.h */,
 				1F08EC081DE4F3C20034FD46 /* View */,
 			);
 			name = Model;
@@ -227,6 +238,7 @@
 				1F7FB4251DE3F14A000E6B7E /* DownloadManager.m in Sources */,
 				1F4B41B21DE524F10073D1BF /* SearchViewController.m in Sources */,
 				1F08EC0B1DE4F3F60034FD46 /* DetailViewController.m in Sources */,
+				1F4B41BB1DE54A5C0073D1BF /* ShowAllViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

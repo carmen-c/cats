@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "DetailViewController.h"
+#import "ShowAllViewController.h"
 #import "PictureCollectionViewCell.h"
 #import "DownloadManager.h"
 #import "SearchViewController.h"
@@ -34,6 +35,12 @@ static NSString *const reuseIdentifier = @"Cell";
 }
 
 
+//- (IBAction)switchTriggered:(id)sender {
+//    if (self.switchButton.state == YES) {
+//        
+//    }
+//}
+
 -(void)aNewTag:(NSNotification *)notify{
     [self getPhotos];
 }
@@ -53,6 +60,11 @@ static NSString *const reuseIdentifier = @"Cell";
 
 #pragma mark - navigation
 
+- (IBAction)showAllButton:(id)sender {
+    [self performSegueWithIdentifier:@"showAll" sender:sender];
+}
+
+
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     self.selectedCell = indexPath;
     [self performSegueWithIdentifier:@"detailView" sender:self];
@@ -63,7 +75,9 @@ static NSString *const reuseIdentifier = @"Cell";
         Photo *selectedPhoto = [self.photos objectAtIndex:self.selectedCell.row];
         DetailViewController *detailVC = segue.destinationViewController;
         detailVC.chosenPhoto = selectedPhoto;
-        
+    }else if ([segue.identifier isEqualToString:@"showAll"]) {
+        ShowAllViewController *showAllVC = segue.destinationViewController;
+        showAllVC.allPhotos = [NSMutableArray arrayWithArray:self.photos];
     }
 }
 

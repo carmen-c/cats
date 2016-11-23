@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Pictures-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -80,7 +80,13 @@
                             <constraint firstAttribute="trailing" secondItem="qvr-kz-4Ja" secondAttribute="trailing" id="wbm-FC-bp0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Pictures" id="mF5-hJ-4Wm">
+                    <navigationItem key="navigationItem" id="mF5-hJ-4Wm">
+                        <barButtonItem key="leftBarButtonItem" title="Show All" id="tgj-KX-cBv">
+                            <connections>
+                                <action selector="showAllButton:" destination="BYZ-38-t0r" id="Br5-E1-qWE"/>
+                                <segue destination="u3E-Sf-coj" kind="show" identifier="showAll" id="w5x-8a-sc5"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="mOZ-Zs-jEE">
                             <connections>
                                 <segue destination="DTU-YB-CsC" kind="presentation" id="2JT-Pm-q6i"/>
@@ -94,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="130.88455772113943"/>
+            <point key="canvasLocation" x="1057" y="138"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="7zC-Dz-lPT">
@@ -137,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BlL-Tt-X8h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1861.5999999999999" y="-270.31484257871068"/>
+            <point key="canvasLocation" x="1996" y="137"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="lyw-IG-9Q3">
@@ -172,7 +178,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VIy-1n-4oJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1858" y="392"/>
+            <point key="canvasLocation" x="1417" y="899"/>
+        </scene>
+        <!--Show All View Controller-->
+        <scene sceneID="LLs-RO-pHC">
+            <objects>
+                <viewController id="u3E-Sf-coj" customClass="ShowAllViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qh4-wD-rAi"/>
+                        <viewControllerLayoutGuide type="bottom" id="m4J-9E-5vm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eQc-J1-HcL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tbi-7J-B79">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <connections>
+                                    <outlet property="delegate" destination="u3E-Sf-coj" id="MkF-dZ-Kz2"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tbi-7J-B79" firstAttribute="top" secondItem="Qh4-wD-rAi" secondAttribute="bottom" id="7GK-8j-xip"/>
+                            <constraint firstItem="tbi-7J-B79" firstAttribute="leading" secondItem="eQc-J1-HcL" secondAttribute="leading" id="9lG-9a-hRn"/>
+                            <constraint firstAttribute="trailing" secondItem="tbi-7J-B79" secondAttribute="trailing" id="wfF-bs-AgN"/>
+                            <constraint firstItem="m4J-9E-5vm" firstAttribute="top" secondItem="tbi-7J-B79" secondAttribute="bottom" id="ylx-rd-bqR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="allMapView" destination="tbi-7J-B79" id="j48-td-Gq1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ASQ-2L-HGd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="756" y="899"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="h8k-Bm-Eky">
