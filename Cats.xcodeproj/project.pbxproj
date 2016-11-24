@@ -21,6 +21,7 @@
 		1F7FB41C1DE3B542000E6B7E /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FB41B1DE3B542000E6B7E /* Photo.m */; };
 		1F7FB41F1DE3BBDB000E6B7E /* PictureCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FB41E1DE3BBDB000E6B7E /* PictureCollectionViewCell.m */; };
 		1F7FB4251DE3F14A000E6B7E /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FB4241DE3F14A000E6B7E /* DownloadManager.m */; };
+		1FE7F1EF1DE673A0005A8486 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7F1EE1DE673A0005A8486 /* LocationManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		1F7FB41E1DE3BBDB000E6B7E /* PictureCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureCollectionViewCell.m; sourceTree = "<group>"; };
 		1F7FB4231DE3F14A000E6B7E /* DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadManager.h; sourceTree = "<group>"; };
 		1F7FB4241DE3F14A000E6B7E /* DownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadManager.m; sourceTree = "<group>"; };
+		1FE7F1ED1DE673A0005A8486 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		1FE7F1EE1DE673A0005A8486 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				1F7FB41B1DE3B542000E6B7E /* Photo.m */,
 				1F7FB4231DE3F14A000E6B7E /* DownloadManager.h */,
 				1F7FB4241DE3F14A000E6B7E /* DownloadManager.m */,
+				1FE7F1ED1DE673A0005A8486 /* LocationManager.h */,
+				1FE7F1EE1DE673A0005A8486 /* LocationManager.m */,
 				1F4B41BC1DE5557E0073D1BF /* API Key.h */,
 				1F08EC081DE4F3C20034FD46 /* View */,
 			);
@@ -236,6 +241,7 @@
 				1F7FB4081DE3B2A2000E6B7E /* AppDelegate.m in Sources */,
 				1F7FB4051DE3B2A2000E6B7E /* main.m in Sources */,
 				1F7FB4251DE3F14A000E6B7E /* DownloadManager.m in Sources */,
+				1FE7F1EF1DE673A0005A8486 /* LocationManager.m in Sources */,
 				1F4B41B21DE524F10073D1BF /* SearchViewController.m in Sources */,
 				1F08EC0B1DE4F3F60034FD46 /* DetailViewController.m in Sources */,
 				1F4B41BB1DE54A5C0073D1BF /* ShowAllViewController.m in Sources */,

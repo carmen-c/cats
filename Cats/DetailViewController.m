@@ -7,93 +7,42 @@
 //
 
 #import "DetailViewController.h"
+#import "LocationManager.h"
 #import <MapKit/MapKit.h>
 
 
 
-@interface DetailViewController ()
+@interface DetailViewController ()<MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *catMapView;
+@property (nonatomic) LocationManager *locationManager;
 @end
 
 @implementation DetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        [self getGeoLocation];
-
-    
-    
+    self.locationManager = [[LocationManager alloc]init];
+    [self.locationManager getLocation:self.chosenPhoto completion:^(CLLocationCoordinate2D coordinate) {
+        self.chosenPhoto.coordinate = coordinate;
+        [self annotationDisplay];
+    }];
 }
 
 #pragma mark - Setup 
 
 -(void)annotationDisplay{
    
-    MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
-    annotation.coordinate = _chosenPhoto.coordinate;
-    MKCoordinateSpan span = MKCoordinateSpanMake(1.0f, 1.0f);
+    //MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
+    //annotation.coordinate = self.chosenPhoto.coordinate;
+    MKCoordinateSpan span = MKCoordinateSpanMake(0.5f, 0.5f);
     self.catMapView.region = MKCoordinateRegionMake(self.chosenPhoto.coordinate, span);
-    [self.catMapView addAnnotation:annotation];
+    [self.catMapView addAnnotation:self.chosenPhoto];
     
 }
 
-#pragma mark - Location
-
--(void)getGeoLocation {
-    NSURL *url = [self getGeoLocationUrl:self.chosenPhoto];
-    NSURLRequest *urlRequest = [[NSURLRequest alloc]initWithURL:url];
-    
-    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
-    
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
-        
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-            return;
-        }
-        
-        NSError *jsonError = nil;
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-        
-        if (jsonError) {
-            NSLog(@"jsonError: %@", jsonError.localizedDescription);
-            return;
-        }
-        
-        NSDictionary *location = json[@"photo"][@"location"];
-        NSNumber *latitude = [location valueForKey:@"latitude"];
-        NSNumber *longitude = [location valueForKey:@"longitude"];
-        
-        
-        [[NSOperationQueue mainQueue]addOperationWithBlock:^{
-            self.chosenPhoto.coordinate = CLLocationCoordinate2DMake([latitude doubleValue], [longitude doubleValue]);
-            [self annotationDisplay];
-        }];
-        
-    }];
-    
-    [dataTask resume];
-}
 
 
--(NSURL *)getGeoLocationUrl:(Photo *)chosenPhoto{
-    
-    NSDictionary *queries = @{@"method": @"flickr.photos.geo.getLocation", @"api_key":@"9c767a008dc29a02317c67afc0206d96", @"format":@"json", @"nojsoncallback":@"1", @"photo_id":self.chosenPhoto.photoId};
-    
-    NSMutableArray *queryItems = [NSMutableArray array];
-    for (NSString *key in queries.allKeys) {
-        [queryItems addObject:[NSURLQueryItem queryItemWithName:key value:queries[key]]];
-    }
-    
-    NSURLComponents *components = [[NSURLComponents alloc]init];
-    components.scheme = @"https";
-    components.host = @"api.flickr.com";
-    components.path = @"/services/rest/";
-    components.queryItems = queryItems;
-    
-    return components.URL;
-}
+
 
 
 @end
