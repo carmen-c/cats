@@ -22,6 +22,7 @@
     [super viewDidLoad];
     self.locationManager = [[LocationManager alloc]init];
     for (Photo *photo in self.allPhotos) {
+        
     [self.locationManager getLocation:photo completion:^(CLLocationCoordinate2D coordinate) {
         photo.coordinate = coordinate;
         [self annotationDisplay];
@@ -29,17 +30,19 @@
     }
 }
 
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    self.allPhotos = nil;
-}
+//-(void)viewWillDisappear:(BOOL)animated{
+//    [super viewWillDisappear:animated];
+//    self.allPhotos = nil;
+//}
 
 
 #pragma mark - Setup
 
 -(void)annotationDisplay{
-    [self.allMapView addAnnotations:self.allPhotos];
     
+    [self.allMapView addAnnotations:self.allPhotos];
 }
+
+
 
 @end

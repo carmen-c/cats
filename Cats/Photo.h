@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
+#import <Realm/Realm.h>
 
 @interface Photo : NSObject <MKAnnotation>
-@property (nonatomic, copy) NSString *title;
+@property NSString *title;
 @property (nonatomic) NSURL *imageUrl;
-@property (nonatomic) NSString *photoId;
-@property(nonatomic) CLLocationCoordinate2D coordinate;
+@property NSString *photoId;
+@property (nonatomic) CLLocationCoordinate2D coordinate;
 
 + (NSArray *)picturesWithArray:(NSArray *)array;
 + (instancetype)photoWithDictionary:(NSDictionary *)dictionary;

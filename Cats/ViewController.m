@@ -13,11 +13,13 @@
 #import "DownloadManager.h"
 #import "SearchViewController.h"
 
+
 @interface ViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic) NSArray *photos;
 @property (nonatomic) DownloadManager *downloadManager;
 @property (nonatomic) NSIndexPath *selectedCell;
+
 @end
 
 @implementation ViewController
@@ -32,17 +34,6 @@ static NSString *const reuseIdentifier = @"Cell";
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(aNewTag:) name:@"newTags" object:nil];
 
-}
-
-
-//- (IBAction)switchTriggered:(id)sender {
-//    if (self.switchButton.state == YES) {
-//        
-//    }
-//}
-
--(void)aNewTag:(NSNotification *)notify{
-    [self getPhotos];
 }
 
 #pragma mark - collection view
@@ -83,6 +74,10 @@ static NSString *const reuseIdentifier = @"Cell";
 
 #pragma mark - general
 
+-(void)aNewTag:(NSNotification *)notify{
+    [self getPhotos];
+}
+
 -(void)getPhotos{
     [self.downloadManager getCatPhotos:^(NSArray *pictures) {
         self.photos = pictures;
@@ -90,5 +85,20 @@ static NSString *const reuseIdentifier = @"Cell";
     }];
 }
 
+//- (void)saveDownloadedImages:(NSArray *)photos{
+//    [self insertDataIntoDataBaseWithName:nameTextField.text WithCity:cityTextField.text];
+//
+//}
+//
+//-(void)insertDataIntoDataBaseWithName:(NSString *)name WithCity:(NSString *)city
+//{
+//    RLMRealm *realm = [RLMRealm defaultRealm];
+//    [realm beginWriteTransaction];
+//    PeopleInformationTable *information = [[PeopleInformationTable alloc] init];
+//    information.name=name;
+//    information.city=city;
+//    [realm addObject:information];
+//    [realm commitWriteTransaction];
+//}
 
 @end

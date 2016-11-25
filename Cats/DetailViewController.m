@@ -34,11 +34,29 @@
    
     //MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
     //annotation.coordinate = self.chosenPhoto.coordinate;
+
     MKCoordinateSpan span = MKCoordinateSpanMake(0.5f, 0.5f);
     self.catMapView.region = MKCoordinateRegionMake(self.chosenPhoto.coordinate, span);
     [self.catMapView addAnnotation:self.chosenPhoto];
     
 }
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    
+    MKPinAnnotationView *annView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"ParkingPin"];
+    
+    NSData *imageData = [NSData dataWithContentsOfURL:self.chosenPhoto.imageUrl];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithData:imageData]];
+    imageView.frame = CGRectMake(0, 0, 50, 50);
+    
+    annView.animatesDrop = TRUE;
+    annView.canShowCallout = YES;
+    annView.calloutOffset = CGPointMake(-5, 5);
+    [annView addSubview:imageView];
+    return annView;
+}
+
 
 
 
